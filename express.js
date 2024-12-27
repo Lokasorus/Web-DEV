@@ -1,8 +1,10 @@
 //designing the CRUD create update delete recieve application
 //postman is used to run test in the backend 
-
+//importing winston and morgam logger to know whats happening in the server, post get etc
 import 'dotenv/config'
 // require('dotenv').config() //to import env file
+import logger from "./logger.js";
+import morgan from "morgan";
 
 import express from 'express'
 const app = express()
@@ -30,6 +32,26 @@ const port =  process.env.port || 3000 //process.env.variable_name to access som
 
 app.use(express.json())
 
+const morganFormat = ":method :url :status :response-time ms"; //how do you want your info to come into the morgan log, everyody uses their own format you can customize yours sccordingly
+
+//make sure it comes after importing express and creating app variable
+
+app.use(
+    morgan(morganFormat, {
+      stream: { // stream is all the data that is streaming and i am just going through and grabbing that information and overwriting tht n
+        write: (message) => { 
+          const logObject = {
+            method: message.split(" ")[0],
+            url: message.split(" ")[1], //splitting the message accordingly
+            status: message.split(" ")[2],
+            responseTime: message.split(" ")[3],
+          };
+          logger.info(JSON.stringify(logObject));
+        },
+      },
+    })
+  )
+
 let teadata = [] // storing data in array// if am going to push the data into array i need a key to uniquely identify the data
 let nextID = 1
 //i need to create different route to add a tea in the teaDATA , i can see how many teas are there in my array, update it or delete it
@@ -40,6 +62,7 @@ let nextID = 1
 //if saed then server restart again and again storing data in array
 //to add tea
 app.post('/teas', (req, res) => {
+    logger.info("A post reques is made to ut") //logger.warn ,etc, nice way to debug your appication using winston and morgan
     const {name, price} = req.body //destructuring
     const newTea = {id: nextID++, name, price} //name and price from the reqbody
     teadata.push(newTea)//storing into array

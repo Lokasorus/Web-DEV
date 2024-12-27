@@ -1,10 +1,14 @@
 //designing the CRUD create update delete recieve application
 //postman is used to run test in the backend 
 
+import 'dotenv/config'
+// require('dotenv').config() //to import env file
+
 import express from 'express'
 const app = express()
+//this port is not suppose to be like this, it requires some way of configuring things and u need to use some env variables
 
-const port = 3000
+const port =  process.env.port || 3000 //process.env.variable_name to access something from env file
 
 // "/" - home route
 // send to send the response

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button>button clicked</button>
+    
+</body>
+<script>
+    class React {
+        constructor(){
+            this.library = "React"
+            this.server = "https://localhost:300"
+
+            //requirement - button reference, click karne pe kuch hojaye 
+
+            document.querySelector('button').addEventListener('click', this.handleclick.bind(this)) // not referring to constructors this, using bind
+
+        }
+        handleclick(){
+            console.log(`CLICKED BUTTOn`)
+            console.log(this.server) // giving undefined -->
+            console.log(this) // has this reference as button  -->
+
+        }
+    }
+
+    const app = new React()
+</script>
+
+</html>

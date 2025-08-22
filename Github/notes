@@ -1,0 +1,109 @@
+//warp
+//git status
+//ls
+//cd 
+//cd .. 
+//git init
+//cd .git
+//never ever change files inside the .git folder
+//repo  - -git tracked folders
+//commit - checkpoint like save point in a game
+//write - add - commit
+//working dir - git init -- git add --staging area --git commit --repo -- git push -- github
+//pwd
+//git rm --cached <file>..." to unstage
+// git commit -m ""  it always need a message
+// git commit -am " " -- add and commit at the same time
+// git add . - add everything
+// /"git restore --staged <file>..." to unstage
+//git log =  log of commits 
+//git log --oneline
+// git config --global user.name " "
+//git config --global user.email " "
+//git config --global core.editor "code --wait"
+//git rm --cached .env .gitignore filethree.txt filefour.txt
+//.gitignore
+//.gitignore generator -  google it gives commonly ignored file script
+//cd ~ home dir
+//cat .gitconfig
+//every commit is related to prev commit except the first one , commit consists of unique id - hash , parent = prev commit, first one  = null, info 
+//Get-ChildItem -Force - show hidden items
+//New-Item -Path . -Name " " ItemType " "
+//touch for linux 
+//ls -la
+//git branch
+//alternate timeline - nodes are commit and master is the default branch
+//head points where branch is currently at
+//git branch nav-bar - created but not pointed
+// git checkout nav-bar points towards navbar
+// head always point towards the last modified code of a branch
+//git branch bugfix
+//git switch bugfix
+//git switch master
+//git switch -c dark-mode - create a branch and move you there
+//git checkout - b blink-mode - same work
+//commit before switching to another branch
+// merging
+// git merge nav-bar
+//git branch -d nav-bar // deleted nav-bar
+//conflicts then merge is possible so fix the conflicts first
+//resolve the conflict and commit it by again adding all
+//git diff
+//comparing working with staging 
+//comapre the same file in x and y time, or can say how it looked before stage and staging, or 2 commits before and now or in a different branch and current branch
+// ---file 1, +++file2 changes in file
+// git diff --staged
+//  git diff e62d860 444f07f
+// or  git diff e62d860..444f07f
+//git diff  branchOne..branchtwo
+//stash
+//suppose you are working on a branch and you made changes so it wont allow you to switch to another branch if there is a situation of conflict until you commit changes, or stage them there comes the choice of stashing.
+//git stash - storing the changes
+//git stash pop - bringing back them - can drop to another branches as well
+//git stash list
+//git stash apply stash@{0}  apply changes and keep them in stash
+//git checkout 30ede43 -- jumping on a particular commit
+//git restore filename -- jumping one commit prior
+//git checkout master - jumping back to forward nodes
+//git checkout HEAD~2 //jumping two commits back
+//git reflog  -- back to last node
+//git rebase
+//alternative to merging - clean up the commits
+//NEVER RUN THE REBASE COMMAND ON THE MASTER BRANCH, ONLY RUN ON THE SIDE BRANCH
+//git rebase master
+//hint: Resolve all conflicts manually, mark them as resolved with
+// hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+// hint: You can instead skip this commit: run "git rebase --skip".
+// hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+//never rebase the commits that you have shared or while pushed to github
+// adding ssh key to github to connect it with out git on the laptop, by reading the documentation available on github and then uploading the ssh key on github
+//Pushing thingd to the github
+
+//echo "# learn-git">> README.md
+//git branch -M main -change master name to main
+//git remote add origin https://github.com/Lokasorus/learn-git.git
+//git push -u origin main - push into origin from my main branch
+//git remote -v
+//git remote add name url
+//git remote rename oldname newname
+//git remote remove name
+//git push <remote> <branch>
+//git push origin main
+//git push <remote> localBranch: remoteBranch
+//-u set up an upstream that allow you to run future command
+//window credentials github - to remove other users 
+//git clone <url> when you clone a repo you just get main branch connected rest of remote branches are not configured
+//git fetch - when actively contributing into code base - it brings info but dont put in work area
+//git pull does that
+//always do work in alternate branch dont hinder someones main branch//
+//first fork into your own account
+//clone it
+//change the branch for main
+//update the code base
+//push the code to your origin
+//create a pull request from github , an write the description vary thoughfully
+
+
+
+
+

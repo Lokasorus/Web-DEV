@@ -1,0 +1,14 @@
+/*// dom selectors
+// document.getElementById('title'), .id, .className, .getAttribute('id'), .setAttribute('class', 'test'), .getElementByClassName,
+//title.style.background-color = "", or .color .padding .borderRadius .innerText, .innerHTML, .innerContent
+//.querySelector('h1') ('ul'),('#title'),('.bg'),('input[type="password"]') or querySelectorAll 
+//Nodelist - queeryselectorall
+templist[0].style.color = ""
+//templist.forEach(function(li){
+    li.style.color = 
+})
+//getElement = collection
+//storing 
+//array.from(storedvariable)
+//document.links[0]
+//document.baseURI*/
